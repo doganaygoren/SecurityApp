@@ -6,4 +6,17 @@
     <string name="devicename">Device Name:</string>
     <string name="defaultHolder">Default</string>
     <string name="editButton">Edit Button</string>
+    <string name="liveFeedIP">Live Feed Ip:</string>
+    <string name="alarmPushCode">Alarm Push Code:</string>
+    <string name="warningPushCode">Warning Push Code:</string>
+    <string name="cameraActivationCode">Camera Activation Code:</string>
+    <string name="systemCheckCode">System Check Code:</string>
+    <string name="tripSensorMin">Trip Sensor Min Range:</string>
+    <string name="tripSensorMax">Trip Sensor Max Range:</string>
+    <string name="buzzerActivation">Buzzer Activation Code:</string>
+    <string name="ledCheck">Led Check Code:</string>
+    <string name="resetDefaults">Reset Defaults</string>
+    <string name="info">Info</string>
+    <string name="checkUpdates">Check For Updates</string>
+    <string name="accept">Accept</string>
 </resources>

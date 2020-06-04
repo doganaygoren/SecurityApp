@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.security">
 
+    <uses-feature android:name="android.hardware.bluetooth"/>
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
@@ -17,7 +18,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SettingsActivity" android:label="Settings" android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".SettingsActivity" android:label="Settings" android:parentActivityName=".MainActivity"/>
         <activity android:name=".RemoteControlActivity" android:label="Remote Control Via SMS" android:parentActivityName=".MainActivity" />
         <activity android:name=".EventLogActivity" android:label="Event Log" android:parentActivityName=".MainActivity" />
         <activity android:name=".StatusActivity" android:label="Sensor Status" android:parentActivityName=".MainActivity" />

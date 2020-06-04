@@ -4,8 +4,408 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+    tools:context=".SettingsActivity"
+    android:background="#edffff"
+    >
 
 
+    <EditText
+        android:id="@+id/etLiveFeedIp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:textColor="#000000"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/ivIPAccept"
+        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintStart_toEndOf="@+id/tvLiveFeedIP"
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="Ip Address"
+        android:labelFor="@id/etLiveFeedIp"
+        />
 
+    <ImageView
+        android:id="@+id/ivIPAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_action_edit_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/accept" />
+
+    <TextView
+        android:id="@+id/tvLiveFeedIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="34dp"
+        android:text="@string/liveFeedIP"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAlarmPushCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
+        android:textColor="#000000"
+        android:text="@string/alarmPushCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLiveFeedIP" />
+
+    <TextView
+        android:id="@+id/tvWarningPushCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="38dp"
+        android:textColor="#000000"
+        android:text="@string/warningPushCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAlarmPushCode" />
+
+    <TextView
+        android:id="@+id/tvCamActivationCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:textColor="#000000"
+        android:text="@string/cameraActivationCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvWarningPushCode" />
+
+    <TextView
+        android:id="@+id/tvSystemCheckCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
+        android:textColor="#000000"
+        android:text="@string/systemCheckCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCamActivationCode" />
+
+    <TextView
+        android:id="@+id/tvTripMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
+        android:textColor="#000000"
+        android:text="@string/tripSensorMin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSystemCheckCode" />
+
+    <TextView
+        android:id="@+id/tvTripMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
+        android:textColor="#000000"
+        android:text="@string/tripSensorMax"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTripMin" />
+
+    <TextView
+        android:id="@+id/tvBuzzerActivation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="#000000"
+        android:layout_marginTop="40dp"
+        android:text="@string/buzzerActivation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTripMax" />
+
+    <TextView
+        android:id="@+id/tvLedCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textColor="#000000"
+        android:layout_marginTop="40dp"
+        android:text="@string/ledCheck"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBuzzerActivation" />
+
+    <EditText
+        android:id="@+id/etAlarmPushCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="#000000"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/ivAlarmPush"
+        app:layout_constraintHorizontal_bias="0.807"
+        app:layout_constraintStart_toEndOf="@+id/tvAlarmPushCode"
+        app:layout_constraintTop_toBottomOf="@+id/etLiveFeedIp"
+        android:autofillHints="Alarm Push Code"
+        android:labelFor="@id/etAlarmPushCode"/>
+
+    <EditText
+        android:id="@+id/etWarningPushCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="#000000"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/ivWarningPush"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toEndOf="@+id/tvWarningPushCode"
+        app:layout_constraintTop_toBottomOf="@+id/etAlarmPushCode"
+        android:autofillHints="Warning Push Code"
+        android:labelFor="@id/etWarningPushCode"
+        />
+
+    <EditText
+        android:id="@+id/etCamActivationCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:textColor="#000000"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/ivCameraActivationPush"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toEndOf="@+id/tvCamActivationCode"
+        app:layout_constraintTop_toBottomOf="@+id/etWarningPushCode"
+        android:autofillHints="Cam Activation Code"
+        android:labelFor="@id/etCamActivationCode"
+        />
+
+    <EditText
+        android:id="@+id/etSystemCheckCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:textColor="#000000"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/ivSystemCheckPush"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/tvSystemCheckCode"
+        app:layout_constraintTop_toBottomOf="@+id/etCamActivationCode"
+        android:autofillHints="System Check Code"
+        android:labelFor="@id/etSystemCheckCode"
+        />
+
+    <EditText
+        android:id="@+id/etTripSensorMin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="#000000"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/ivTripMinPush"
+        app:layout_constraintHorizontal_bias="0.583"
+        app:layout_constraintStart_toEndOf="@+id/tvTripMin"
+        app:layout_constraintTop_toBottomOf="@+id/etSystemCheckCode"
+        android:autofillHints="Trip Sensor Min"
+        android:labelFor="@id/etTripSensorMin"
+        />
+
+    <EditText
+        android:id="@+id/etTripSensorMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:textColor="#000000"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toStartOf="@+id/ivTripMaxPush"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toEndOf="@+id/tvTripMax"
+        app:layout_constraintTop_toBottomOf="@+id/etTripSensorMin"
+        android:autofillHints="Trip Sensor Max"
+        android:labelFor="@id/etTripSensorMax"/>
+
+    <EditText
+        android:id="@+id/etBuzzerActivationCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/ivBuzzerPush"
+        app:layout_constraintHorizontal_bias="0.523"
+        app:layout_constraintStart_toEndOf="@+id/tvBuzzerActivation"
+        app:layout_constraintTop_toBottomOf="@+id/etTripSensorMax"
+        android:autofillHints="Buzzer Activation Code"
+        android:labelFor="@id/etBuzzerActivationCode"/>
+
+    <ImageView
+        android:id="@+id/ivAlarmPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/accept"
+        android:src="@drawable/ic_action_edit_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivIPAccept" />
+
+    <ImageView
+        android:id="@+id/ivWarningPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/accept"
+        android:src="@drawable/ic_action_edit_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivAlarmPush" />
+
+    <ImageView
+        android:id="@+id/ivCameraActivationPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="@string/accept"
+        android:src="@drawable/ic_action_edit_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivWarningPush" />
+
+    <ImageView
+        android:id="@+id/ivSystemCheckPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:contentDescription="@string/accept"
+        android:focusable="true"
+        android:src="@drawable/ic_action_edit_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivCameraActivationPush" />
+
+    <ImageView
+        android:id="@+id/ivTripMinPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:contentDescription="@string/accept"
+        android:focusable="true"
+        android:src="@drawable/ic_action_edit_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivSystemCheckPush" />
+
+    <ImageView
+        android:id="@+id/ivTripMaxPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:contentDescription="@string/accept"
+        android:focusable="true"
+        android:src="@drawable/ic_action_edit_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivTripMinPush" />
+
+    <ImageView
+        android:id="@+id/ivBuzzerPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/ic_action_edit_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivTripMaxPush"
+        android:contentDescription="@string/accept"
+        />
+
+    <ImageView
+        android:id="@+id/ivLedCheckPush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/ic_action_edit_accept"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivBuzzerPush"
+        android:contentDescription="@string/accept"/>
+
+    <EditText
+        android:id="@+id/etLedCheckCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/ivLedCheckPush"
+        app:layout_constraintHorizontal_bias="0.843"
+        android:textColor="#000000"
+        app:layout_constraintStart_toEndOf="@+id/tvLedCheck"
+        app:layout_constraintTop_toBottomOf="@+id/etBuzzerActivationCode"
+        android:autofillHints="Led Check Code"
+        android:labelFor="@id/etLedCheckCode"/>
+
+    <Button
+        android:id="@+id/btnDefault"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#f0fffe"
+        android:drawableStart="@drawable/ic_action_refresh"
+        android:gravity="center|start"
+        android:text="@string/resetDefaults"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etLedCheckCode" />
+
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f0fffe"
+        android:drawableStart="@drawable/ic_action_info"
+        android:gravity="center|start"
+        android:text="@string/info"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDefault" />
+
+    <Button
+        android:id="@+id/btnCheckUpdates"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f0fffe"
+        android:drawableStart="@drawable/ic_action_check_update"
+        android:gravity="center|start"
+        android:text="@string/checkUpdates"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnInfo"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

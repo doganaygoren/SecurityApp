@@ -171,7 +171,7 @@ public class BluetoothActivity extends AppCompatActivity {
                 //creating bond
                 if(Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR2){
                     Log.d("BluetoothActivity","Trying to pair with " + deviceName);
-                    btDevices.get(position).createBond();
+                    btDevices.get(position).createBond(); // initiate bonding
                 }
             }
         });
