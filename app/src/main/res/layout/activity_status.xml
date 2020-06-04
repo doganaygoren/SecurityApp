@@ -6,4 +6,198 @@
     android:layout_height="match_parent"
     tools:context=".StatusActivity">
 
+    <TextView
+        android:id="@+id/tvTripSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tripSensor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTripSensorStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/defaultHolder"
+        app:layout_constraintStart_toEndOf="@+id/tvTripSensor"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SwitchCompat
+
+        android:id="@+id/switchTripSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="4dp"
+        android:thumb="@drawable/btstatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvTripSensorStatus"
+        app:layout_constraintTop_toTopOf="parent"
+        app:track="@drawable/btstatustrack" />
+
+    <TextView
+        android:id="@+id/tvMotionSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="@string/motionSensor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTripSensor" />
+
+    <TextView
+        android:id="@+id/tvMotionSensorStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/defaultHolder"
+        app:layout_constraintStart_toEndOf="@+id/tvMotionSensor"
+        app:layout_constraintTop_toBottomOf="@+id/tvTripSensorStatus" />
+
+    <androidx.appcompat.widget.SwitchCompat
+
+        android:id="@+id/switchMotionSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="24dp"
+        android:thumb="@drawable/btstatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvMotionSensorStatus"
+        app:layout_constraintTop_toBottomOf="@+id/switchTripSensor"
+        app:track="@drawable/btstatustrack" />
+
+    <TextView
+        android:id="@+id/tvBuzzer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/buzzer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMotionSensor" />
+
+    <TextView
+        android:id="@+id/tvBuzzerSensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/defaultHolder"
+        app:layout_constraintStart_toEndOf="@+id/tvBuzzer"
+        app:layout_constraintTop_toBottomOf="@+id/tvMotionSensorStatus" />
+
+
+    <androidx.appcompat.widget.SwitchCompat
+
+        android:id="@+id/switchBuzzer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="16dp"
+        android:thumb="@drawable/btstatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvBuzzerSensor"
+        app:layout_constraintTop_toBottomOf="@+id/switchMotionSensor"
+        app:track="@drawable/btstatustrack" />
+
+    <TextView
+        android:id="@+id/tvCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/camera"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvBuzzer" />
+
+    <TextView
+        android:id="@+id/tvCameraStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/defaultHolder"
+        app:layout_constraintStart_toEndOf="@+id/tvCamera"
+        app:layout_constraintTop_toBottomOf="@+id/tvBuzzerSensor" />
+
+    <androidx.appcompat.widget.SwitchCompat
+
+        android:id="@+id/switchCamera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:thumb="@drawable/btstatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toEndOf="@+id/tvCameraStatus"
+        app:layout_constraintTop_toBottomOf="@+id/switchBuzzer"
+        app:track="@drawable/btstatustrack" />
+
+    <TextView
+        android:id="@+id/tvLed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/led"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCamera" />
+
+    <TextView
+        android:id="@+id/tvLedStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/defaultHolder"
+        app:layout_constraintStart_toEndOf="@+id/tvLed"
+        app:layout_constraintTop_toBottomOf="@+id/tvCameraStatus" />
+
+    <androidx.appcompat.widget.SwitchCompat
+
+        android:id="@+id/switchLed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="24dp"
+        android:thumb="@drawable/btstatus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvLedStatus"
+        app:layout_constraintTop_toBottomOf="@+id/switchCamera"
+        app:track="@drawable/btstatustrack" />
+
+    <TextView
+        android:id="@+id/tvEspCam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="64dp"
+        android:text="@string/espCam"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLed" />
+
+    <TextView
+        android:id="@+id/tvEspCamStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="72dp"
+        android:text="@string/defaultHolder"
+        app:layout_constraintStart_toEndOf="@+id/tvEspCam"
+        app:layout_constraintTop_toBottomOf="@+id/tvLedStatus" />
+
+    <Button
+        android:id="@+id/btnGoLive"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="@string/goLive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintStart_toEndOf="@+id/tvEspCamStatus"
+        app:layout_constraintTop_toBottomOf="@+id/switchLed" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
