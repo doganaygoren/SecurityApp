@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Security</string>
+
+    <string name="bluetooth">Bluetooth</string>
+    <string name="status">Status</string>
+    <string name="devicename">Device Name:</string>
+    <string name="defaultHolder">Default</string>
+    <string name="editButton">Edit Button</string>
+</resources>

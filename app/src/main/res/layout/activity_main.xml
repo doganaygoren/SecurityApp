@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:rowCount="3"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnBluetooth"
+        android:layout_gravity="fill"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:text="Bluetooth"
+        android:background="@drawable/ic_action_bluetooth"
+        android:gravity="bottom|center"
+        android:paddingBottom="4dp"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/btnLiveFeed"
+        android:layout_gravity="fill"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:text="Live Feed"
+        android:background="@drawable/ic_action_live_feed"
+        android:gravity="bottom|center"
+        android:paddingBottom="4dp"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/btnStatus"
+        android:layout_gravity="fill"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:text="Sensor Status"
+        android:textAllCaps="false"
+        android:background="@drawable/ic_action_status"
+        android:gravity="bottom|center"
+        android:paddingBottom="4dp"
+        />
+
+    <Button
+        android:id="@+id/btnRemoteControl"
+        android:layout_gravity="fill"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:text="Remote Control"
+        android:background="@drawable/ic_action_remote_control"
+        android:gravity="center|bottom"
+        android:paddingBottom="4dp"
+        android:textAllCaps="false"
+        />
+
+    <Button
+        android:id="@+id/btnEventLog"
+        android:layout_gravity="fill"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:text="Event Logs"
+        android:background="@drawable/ic_action_event_log"
+        android:gravity="center|bottom"
+        android:paddingBottom="4dp"
+        android:textAllCaps="false"
+        />
+    <Button
+        android:id="@+id/btnSettings"
+        android:layout_gravity="fill"
+        android:layout_rowWeight="1"
+        android:layout_columnWeight="1"
+        android:text="Settings"
+        android:background="@drawable/ic_action_settings"
+        android:gravity="center|bottom"
+        android:paddingBottom="4dp"
+        android:textAllCaps="false"
+        />
+
+
+
+</GridLayout>
