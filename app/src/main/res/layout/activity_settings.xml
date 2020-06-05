@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity"
     android:background="#edffff"
+    android:descendantFocusability="blocksDescendants"
     >
 
 

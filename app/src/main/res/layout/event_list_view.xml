@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/defaultHolder"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:id="@+id/tvEvent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textColor="#000000"
+        android:text="@string/defaultHolder"
+        android:id="@+id/tvDescription"
+        android:layout_below="@id/tvEvent"
+
+    />
+
+    <ImageButton
+        android:id="@+id/imageBtnDelete"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/delete_button"
+        android:src="@drawable/ic_action_delete"
+        android:layout_marginStart="350dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/deleteButton" />
+
+</RelativeLayout>

@@ -51,6 +51,13 @@ public class BluetoothActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bluetooth);
 
         bluetoothAdapter=BluetoothAdapter.getDefaultAdapter();
+
+        //check if bluetooth is supported
+        if(bluetoothAdapter==null){
+            Toast.makeText(getApplicationContext(),"Bluetooth is not supported",Toast.LENGTH_SHORT).show();
+            finish();
+        }
+
         switchBluetooth=findViewById(R.id.switchBluetooth);
         tvDeviceNameDefiner=findViewById(R.id.tvDeviceNameDefiner);
         tvPairedHeader=findViewById(R.id.tvPairedHeader);
