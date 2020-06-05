@@ -26,6 +26,11 @@
     <string name="led">Led:</string>
     <string name="espCam">ESP Cam:</string>
     <string name="goLive">Go Live</string>
+    <string name="armed">ARMED</string>
+    <string name="disarmed">DISARMED</string>
+    <string name="active">ACTIVE</string>
+    <string name="inactive">INACTIVE</string>
+    <string name="standby">STBY</string>
 
 
 </resources>
