@@ -171,7 +171,7 @@ public class BluetoothActivity extends AppCompatActivity {
                 //creating bond
                 if(Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN_MR2){
                     Log.d("BluetoothActivity","Trying to pair with " + deviceName);
-                    btDevices.get(position).createBond(); // initiate bonding
+                    btDevices.get(position).createBond();// initiate bonding
                 }
             }
         });
@@ -234,7 +234,6 @@ public class BluetoothActivity extends AppCompatActivity {
 
         if (discoverBroadcastReceiver != null) {
             // Sometimes the Fragment onDestroy() unregisters the observer before calling below code
-            // See <a>http://stackoverflow.com/questions/6165070/receiver-not-registered-exception-error</a>
             try  {
                 unregisterReceiver(discoverBroadcastReceiver);
                 discoverBroadcastReceiver = null;
