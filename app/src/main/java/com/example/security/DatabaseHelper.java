@@ -5,58 +5,55 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 
+import androidx.annotation.Nullable;
+
+import java.sql.Timestamp;
 import java.util.ArrayList;
+
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public final static String DATABASE_NAME="SECURITY.DB";
-    public final static String TABLE_NAME="EVENTS";
-    public final static String COL_ID="ID";
-    public final static String COL_TYPE="TYPE";
-    public final static String COL_DESCRIPTION="DESCRIPTION";
-    SQLiteDatabase database;
+    public static final String DATABASE_NAME="eventList.db";
+    public static final String TABLE_NAME="events";
+    public static final String COL1="id";
+    public static final String COL2="type";
+    public static final String COL3="description";
+    public static final String COL4="created_at";
 
-    public DatabaseHelper(Context context) {
+    public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String CREATE_TABLE="CREATE TABLE "+TABLE_NAME+" ( ID INTEGER PRIMARY KEY AUTOINCREMENT,TYPE TEXT NOT NULL,DESCRIPTION TEXT NOT NULL)";
-        sqLiteDatabase.execSQL(CREATE_TABLE);
-        this.database=sqLiteDatabase;
+    public void onCreate(SQLiteDatabase database) {
+        String createTable="CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + " TYPE TEXT, DESCRIPTION TEXT, CREATED_AT DATETIME DEFAULT CURRENT_TIMESTAMP)";
+        database.execSQL(createTable);
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-        String query="DROP TABLE IF EXISTS "+TABLE_NAME;
-        sqLiteDatabase.execSQL(query,null);
-        this.onCreate(sqLiteDatabase);
+    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion) {
+
+        database.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(database);
     }
 
+    public boolean addEvent(String type, String description){
 
-    public boolean insertEvent(String type, String description) {
-
-        database=this.getWritableDatabase();
-        String query="SELECT * FROM "+ TABLE_NAME;
-        Cursor cursor=database.rawQuery(query,null);
-        int count=cursor.getCount();
-
+        SQLiteDatabase database= this.getWritableDatabase();
         ContentValues contentValues=new ContentValues();
-        contentValues.put(COL_ID,(count+1));
-        contentValues.put(COL_TYPE,type);
-        contentValues.put(COL_DESCRIPTION,description);
+        contentValues.put(COL2,type);
+        contentValues.put(COL3,description);
         long result=database.insert(TABLE_NAME,null,contentValues);
-        database.close();
-        if(result==-1) //data is not inserted
+        if( result == -1 )
             return false;
-        else //insert
+        else
             return true;
     }
 
     public ArrayList<String> getAllEvents() {
-        database=this.getReadableDatabase();
+        SQLiteDatabase database=this.getReadableDatabase();
         ArrayList<String> eventList=new ArrayList<>();
         String query="SELECT TYPE, DESCRIPTION FROM "+TABLE_NAME;
         Cursor cursor=database.rawQuery(query,null);
@@ -66,6 +63,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             }while(cursor.moveToNext());
         }
         database.close();
+        cursor.close();
         return eventList;
+    }
+
+    public Cursor getEvents(){
+
+        SQLiteDatabase database=this.getReadableDatabase();
+        return database.rawQuery("SELECT * FROM " + TABLE_NAME,null);
+    }
+
+    public void deleteEvent(int id){
+
+        SQLiteDatabase database=this.getWritableDatabase();
+        String sql= "DELETE FROM "+ TABLE_NAME + " WHERE id=?";
+        SQLiteStatement statement=database.compileStatement(sql);
+        statement.execute();
+        database.close();
+    }
+
+    public void deleteAllEvents(){
+
+        SQLiteDatabase database=this.getWritableDatabase();
+        database.execSQL("delete from "+ TABLE_NAME);
     }
 }

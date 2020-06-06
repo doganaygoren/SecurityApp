@@ -37,5 +37,6 @@
     <string name="availableDevices">Available Devices</string>
     <string name="scan">Scan</string>
     <string name="refreshButton">Refresh Button</string>
+    <string name="events">Events</string>
 
 </resources>
