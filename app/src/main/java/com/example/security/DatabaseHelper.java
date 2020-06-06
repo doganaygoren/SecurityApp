@@ -52,6 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
+    //Will be used for Settings
     public ArrayList<String> getAllEvents() {
         SQLiteDatabase database=this.getReadableDatabase();
         ArrayList<String> eventList=new ArrayList<>();
@@ -70,7 +71,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Cursor getEvents(){
 
         SQLiteDatabase database=this.getReadableDatabase();
-        return database.rawQuery("SELECT * FROM " + TABLE_NAME,null);
+        return database.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY id DESC", null);
     }
 
     public void deleteEvent(int id){
