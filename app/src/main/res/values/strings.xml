@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Security</string>
-
+    <string name="liveFeed">Live Feed</string>
+    <string name="sensorStatus">Sensor Status</string>
+    <string name="remoteControl">Remote Control</string>
+    <string name="eventLog">Event Log</string>
+    <string name="settings">Settings</string>
     <string name="bluetooth">Bluetooth</string>
     <string name="status">Status</string>
     <string name="devicename">Device Name:</string>
