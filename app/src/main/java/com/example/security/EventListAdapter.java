@@ -2,6 +2,7 @@ package com.example.security;
 
 import android.content.Context;
 import android.graphics.ColorSpace;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ public class EventListAdapter extends BaseAdapter {
     private int layout;
     private Context context;
     private ArrayList<Event> eventList;
+    DatabaseHelper databaseHelper;
     public EventListAdapter(@NonNull Context context, int layout, @NonNull ArrayList<Event> eventList) {
 
         this.context=context;
@@ -51,7 +53,7 @@ public class EventListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup viewGroup){
+    public View getView(final int position, View convertView, ViewGroup viewGroup){
 
         View row= convertView;
         ViewHolder viewHolder=new ViewHolder();
@@ -70,12 +72,17 @@ public class EventListAdapter extends BaseAdapter {
             viewHolder=(ViewHolder) row.getTag();
         }
 
-        Event event= eventList.get(position);
+        final Event event= eventList.get(position);
         viewHolder.tvEvent.setText(event.getType());
         viewHolder.tvDescription.setText((event.getDescription()));
-
+        viewHolder.imageBtnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                eventList.remove(position);
+                notifyDataSetChanged();
+            }
+        });
         return row;
     }
-
 
 }

@@ -74,15 +74,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return database.rawQuery("SELECT * FROM " + TABLE_NAME + " ORDER BY id DESC", null);
     }
 
-    public void deleteEvent(int id){
+    public void deleteEvent(int item_id){
 
         SQLiteDatabase database=this.getWritableDatabase();
-        String sql= "DELETE FROM "+ TABLE_NAME + " WHERE id=?";
+        String sql= "DELETE FROM events WHERE id=" +item_id;
         SQLiteStatement statement=database.compileStatement(sql);
         statement.execute();
         database.close();
     }
+    /*
+    public void deleteEvent(String item_id){
 
+        SQLiteDatabase database=this.getWritableDatabase();
+        database.delete(TABLE_NAME, COL1+" = ?",new String[]{item_id});
+        database.close();
+    }
+    */
     public void deleteAllEvents(){
 
         SQLiteDatabase database=this.getWritableDatabase();

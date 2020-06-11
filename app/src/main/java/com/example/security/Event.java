@@ -6,6 +6,7 @@ public class Event {
     private String type;
     private String description;
 
+
     public Event(int id, String type, String description) {
         this.id = id;
         this.type = type;
@@ -35,5 +36,4 @@ public class Event {
     public void setDescription(String description) {
         this.description = description;
     }
-
 }

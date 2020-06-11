@@ -42,5 +42,8 @@
     <string name="scan">Scan</string>
     <string name="refreshButton">Refresh Button</string>
     <string name="events">Events</string>
+    <string name="deleteAll">Delete All</string>
+    <string name="goToSensors">Go To Sensors</string>
+    <string name="menu">Options</string>
 
 </resources>
