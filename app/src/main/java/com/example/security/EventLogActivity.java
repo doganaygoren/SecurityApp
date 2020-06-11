@@ -65,32 +65,27 @@ public class EventLogActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
         switch (item.getItemId()){
-
             case R.id.goToSensors:
                 Intent forward= new Intent(EventLogActivity.this, StatusActivity.class);
                 startActivity(forward);
                 break;
             case R.id.menuDeleteAll:
-
                 if(eventList.size()==0){
                     // If there is no data currently
                     Toast.makeText(this,"There is no record to delete.",Toast.LENGTH_LONG).show();
                     break;
                 }
-                else {
-                    databaseHelper.deleteAllEvents();
-                    eventListAdapter.notifyDataSetChanged();
-                    finish();
-                    overridePendingTransition(0, 0);
-                    startActivity(getIntent());
-                    overridePendingTransition(0, 0);
-                    Toast.makeText(this,"All event logs are cleared.",Toast.LENGTH_LONG).show();
-                    break;
-                }
-        }
+                databaseHelper.deleteAllEvents();
+                eventListAdapter.notifyDataSetChanged();
+                finish();
+                overridePendingTransition(0, 0);
+                startActivity(getIntent());
+                overridePendingTransition(0, 0);
+                Toast.makeText(this,"All event logs are cleared.",Toast.LENGTH_LONG).show();
+                break;
 
+        }
         return super.onOptionsItemSelected(item);
     }
 }

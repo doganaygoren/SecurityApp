@@ -35,6 +35,7 @@
     <string name="active">ACTIVE</string>
     <string name="inactive">INACTIVE</string>
     <string name="standby">STBY</string>
+    <string name="detected">DETECTED</string>
     <string name="deleteButton">Delete Button</string>
     <string name="acceptButton">Accept Button</string>
     <string name="pairedDevices">Paired Devices</string>

@@ -21,7 +21,6 @@ public class EventListAdapter extends BaseAdapter {
     private int layout;
     private Context context;
     private ArrayList<Event> eventList;
-    DatabaseHelper databaseHelper;
     public EventListAdapter(@NonNull Context context, int layout, @NonNull ArrayList<Event> eventList) {
 
         this.context=context;
