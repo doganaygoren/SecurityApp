@@ -22,7 +22,7 @@ public class StatusActivity extends AppCompatActivity {
     private static final String TYPE_TRIP= "TRIP SENSOR STATE CHANGED.";
     private static final String DESCRIPTION_TRIP1="Trip sensor is now ARMED.";
     private static final String DESCRIPTION_TRIP2="Trip sensor is now DISARMED.";
-    private static final String TYPE_MOTION="motion sensor state changed.";
+    private static final String TYPE_MOTION="MOTION SENSOR STATE CHANGED.";
     private static final String DESCRIPTION_MOTION1="Motion sensor is now ARMED.";
     private static final String DESCRIPTION_MOTION2="Motion sensor is now DISARMED.";
     private static final String TYPE_BUZZER="BUZZER STATE CHANGED.";
@@ -52,8 +52,6 @@ public class StatusActivity extends AppCompatActivity {
         switchTripSensor=findViewById(R.id.switchTripSensor);
         btnGoLive=findViewById(R.id.btnGoLive);
 
-        databaseHelper.addEvent("efefe","thththt");
-
         //*************************************************************************************** ONCLICK METHODS ********************************************************************
 
         switchTripSensor.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -66,6 +64,7 @@ public class StatusActivity extends AppCompatActivity {
                         tvTripSensorStatus.setText(R.string.armed);
                         tvTripSensorStatus.setTextColor(Color.rgb(0,255,0));
                         databaseHelper.addEvent(TYPE_TRIP,DESCRIPTION_TRIP1);
+                        switchTripSensor.setChecked(true);
                     } catch (Exception e){
 
                         e.printStackTrace();
@@ -78,6 +77,7 @@ public class StatusActivity extends AppCompatActivity {
                         tvTripSensorStatus.setText(R.string.disarmed);
                         tvTripSensorStatus.setTextColor(Color.rgb(255,0,0));
                         databaseHelper.addEvent(TYPE_TRIP,DESCRIPTION_TRIP2);
+                        switchTripSensor.setChecked(false);
                     } catch (Exception e){
                         e.printStackTrace();
                     }
@@ -94,11 +94,13 @@ public class StatusActivity extends AppCompatActivity {
                     tvMotionSensorStatus.setText(R.string.armed);
                     tvMotionSensorStatus.setTextColor(Color.rgb(0,255,0));
                     databaseHelper.addEvent(TYPE_MOTION,DESCRIPTION_MOTION1);
+                    switchMotionSensor.setChecked(true);
                 }
                 else{
                     tvMotionSensorStatus.setText(R.string.disarmed);
                     tvMotionSensorStatus.setTextColor(Color.rgb(255,0,0));
                     databaseHelper.addEvent(TYPE_MOTION,DESCRIPTION_MOTION2);
+                    switchMotionSensor.setChecked(false);
                 }
             }
         });
@@ -111,11 +113,13 @@ public class StatusActivity extends AppCompatActivity {
                     tvBuzzerSensor.setText(R.string.active);
                     tvBuzzerSensor.setTextColor(Color.rgb(0,255,0));
                     databaseHelper.addEvent(TYPE_BUZZER,DESCRIPTION_BUZZER1);
+                    switchBuzzer.setChecked(true);
                 }
                 else{
                     tvBuzzerSensor.setText(R.string.inactive);
                     tvTripSensorStatus.setTextColor(Color.rgb(255,0,0));
                     databaseHelper.addEvent(TYPE_BUZZER,DESCRIPTION_BUZZER2);
+                    switchBuzzer.setChecked(false);
                 }
             }
         });
@@ -128,10 +132,12 @@ public class StatusActivity extends AppCompatActivity {
                     tvCameraStatus.setText(R.string.detected);
                     tvCameraStatus.setTextColor(Color.rgb(255,0,0));
                     databaseHelper.addEvent(TYPE_CAMERA,DESCRIPTION_CAMERA1);
+                    switchCamera.setChecked(true);
                 }
                 else{
                     tvCameraStatus.setText(R.string.standby);
                     tvCameraStatus.setTextColor(Color.rgb(0,91,255));
+                    switchCamera.setChecked(false);
                 }
             }
         });
@@ -144,11 +150,13 @@ public class StatusActivity extends AppCompatActivity {
                     tvLedStatus.setText(R.string.active);
                     tvLedStatus.setTextColor(Color.rgb(0,255,0));
                     databaseHelper.addEvent(TYPE_LED,DESCRIPTION_LED1);
+                    switchLed.setChecked(true);
                 }
                 else{
                     tvLedStatus.setText(R.string.inactive);
                     tvLedStatus.setTextColor(Color.rgb(255,0,0));
                     databaseHelper.addEvent(TYPE_LED,DESCRIPTION_LED2);
+                    switchLed.setChecked(false);
                 }
             }
         });

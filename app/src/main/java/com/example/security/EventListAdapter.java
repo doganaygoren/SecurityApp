@@ -1,12 +1,9 @@
 package com.example.security;
 
 import android.content.Context;
-import android.graphics.ColorSpace;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -14,13 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class EventListAdapter extends BaseAdapter {
 
     private int layout;
     private Context context;
     private ArrayList<Event> eventList;
+
     public EventListAdapter(@NonNull Context context, int layout, @NonNull ArrayList<Event> eventList) {
 
         this.context=context;
