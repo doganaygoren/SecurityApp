@@ -46,5 +46,7 @@
     <string name="deleteAll">Delete All</string>
     <string name="goToSensors">Go To Sensors</string>
     <string name="menu">Options</string>
-
+    <string name="send">Send</string>
+    <string name="phoneNumber">Number:</string>
+    <string name="command">Command:</string>
 </resources>
